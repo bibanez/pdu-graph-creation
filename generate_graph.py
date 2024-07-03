@@ -6,10 +6,10 @@ import opendbpy as odb
 from tqdm import tqdm
 
 def build_graph(design, undirected=False):
-    '''
+    """
     Input: design is an OpenDB representation of the chip
     Returns: graph-tool Graph
-    '''
+    """
     instances = design.getBlock().getInsts()
     pins = design.getBlock().getBTerms()
 
@@ -103,7 +103,7 @@ def read_netlist(lef_file, def_file):
         print("Problem loading the design!")
         return None
 
-    # parse the design into a DGL graph
+    # parse the design into a graph-tool graph
     design = db.getChip()
     G = build_graph(design)
 
